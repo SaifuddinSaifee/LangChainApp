@@ -88,3 +88,11 @@ These prompts run sequentionally to provide multiple outputs.
 
 ### 4. Sequential Chains
 
+Here you can see the title as well as the script
+
+![Example of sequential chains, displaying output of both the chains](seq_chain_op.png)
+
+### 5. Adding buffer memory (for storing the history) to our LLM using langchain
+
+### 6. Integrating Wikipedia research tool in our application
+

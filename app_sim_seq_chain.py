@@ -1,4 +1,4 @@
-# This python file uses Chains
+# This python file uses Simple Sequential Chain
 import os
 from apikey import apikey
 
