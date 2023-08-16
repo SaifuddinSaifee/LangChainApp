@@ -30,3 +30,10 @@ Download the repo:
 
     > [!IMPORTANT]
     > Make sure you add the `apikey.py` this file to `.gitignore`.
+
+3. To run the code, type in terminal
+
+    ```bash
+    streamlit run app.py
+    ```
+    
