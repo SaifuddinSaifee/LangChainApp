@@ -71,7 +71,7 @@ To run [app_pro_tem.py](app_pro_tem.py)
 
 ### 3. Simple Sequential Chains
 
-Refer [app_chain_demo.py](app_chain_demo.py)
+Refer [app_sim_seq_chain.py](app_sim_seq_chain.py)
 
 Simple Sequential prompting, that is, you can chain up multiple prompts that works together to give you multuiple output.
 
@@ -84,4 +84,7 @@ These prompts run sequentionally to provide multiple outputs.
 ![Sequentially running chains, output of chain 1 passed as input for chain 2](sim_seq_chns.png)
 
 > [!NOTE]
-> **Simple Sequential chain** only dispalys the output of the last chain, whereas to get the output of all our desired chains we can use **Sequential chain**
+> **Simple Sequential chain** only dispalys the output of the last chain on the web app, whereas to get the output of all our desired chains on our web app we can use **Sequential chain**
+
+### 4. Sequential Chains
+
