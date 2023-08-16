@@ -1,5 +1,5 @@
 
-# Building our own AutoGPT with the help of LangChain and GPT-3
+# Building your first application with GPT-3 and LangChain
 
 ## Overview
 
