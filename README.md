@@ -15,7 +15,10 @@ Download the repo:
 [Link](https://github.com/)
 
 1. Install dependencies:
+
+    ```bash
     pip install -r requirements.txt
+    ```
 
 2. Insert your GPT-3 apikey
     In the project directory, create a file `apikey.py` and paste in the following content
