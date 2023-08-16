@@ -10,8 +10,8 @@ from langchain.chains import LLMChain, SequentialChain
 os.environ["OPENAI_API_KEY"] = apikey
 
 # App framkework
-st.title('GPT Creator with Langchain')
-prompt = st.text_input('Ask away!✨')
+st.title('GPT YouTube Creator (Title and Script)')
+prompt = st.text_input('Advance prompts with Sequential Chain. Input the topic, and get YouTube a tacky Title and a script✨')
 
 # Prompt templates
 title_template = PromptTemplate(

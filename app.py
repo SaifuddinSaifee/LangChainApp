@@ -7,7 +7,7 @@ from langchain.llms import OpenAI
 os.environ["OPENAI_API_KEY"] = apikey
 
 # App framkework
-st.title('GPT Creator with Langchain')
+st.title('Yet another GPT application')
 prompt = st.text_input('Ask away!✨')
 
 # LLMs

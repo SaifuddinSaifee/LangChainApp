@@ -1,61 +1,75 @@
+
 # Building our own AutoGPT with the help of LangChain and GPT-3
 
-Notes:
+## Overview
 
-STREAMLIT - USED TO BUILD THE APP
-LANGCHAIN- USED TO BUILD LLM WORKFLOW
-OPENAI - NEEDED TO USE OPENAI GPT
-WIKIPEDIA- USED TO CONNECT GPT TO WIKIPEDIA
-CHROMADB - VECTOR STORAGE
-TIKTOKEN - BACKEND TOKENIZER FOR OPENAI
+This repository contains code to build a text generation app using the LangChain library and OpenAI's GPT-3 model. The app is built using Streamlit, a Python library for creating web applications. The LangChain library is used to manage the LLM (Language Model Management) workflow, and OpenAI is used to access the GPT-3 model.
 
-## Run the app
+For a detailed explanation of the code and get the basics of LangChain, read [blog](hashnode) 🚀
 
-Download the repo:
-[Link](https://github.com/)
+## Run the App
 
-1. Install dependencies:
+To run the app locally, follow these steps:
+
+1. Clone the repository:
+
+2. Install the required dependencies:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-2. Insert your GPT-3 apikey
-    In the project directory, create a file `apikey.py` and paste in the following content
+3. Insert your GPT-3 API key:
 
-    ```python
-    apikey = 'YOUR_OPENAI_API_KEY'
-    ```
+    - In the project directory, create a file named `apikey.py`.
+    - Inside `apikey.py`, paste the following content:
 
-    Replace `YOUR_OPENAI_API_KEY` with your OpenAI key.
+        ```python
+        apikey = 'YOUR_OPENAI_API_KEY'
+        ```
 
-    Save the file.
+        Replace `YOUR_OPENAI_API_KEY` with your actual OpenAI API key.
+    - Save the `apikey.py` file.
 
-    > [!IMPORTANT]
-    > Make sure you add the `apikey.py` this file to `.gitignore`.
+> [!IMPORTANT] 
+> Make sure to add `apikey.py` to your `.gitignore` file to avoid exposing your API key.
 
-3. To run the code, type in terminal
+4. Run the Streamlit app:
 
     ```bash
     streamlit run app.py
     ```
 
-## Types of use case
+    Your application should be live on http://localhost:8501/
 
-### 1. With user input prompts
+## Different Use Cases
 
-Refer [app.py](app.py)
+This repository explores four features of Langchain to get a better understanding of the basics of Langchain:
 
-To run [app.py](app.py)
-    ```bash
-    streamlit run app.py
-    ```
+1. [User Input Prompts](https://docs.langchain.com/docs/components/prompts/prompt-value)
+2. [Prompt Templates](https://docs.langchain.com/docs/components/prompts/prompt-template)
+3. [Simple Sequential Chains](https://python.langchain.com/docs/modules/chains/foundational/sequential_chains)
+4. [Sequential Chains](https://python.langchain.com/docs/modules/chains/foundational/sequential_chains)
 
-![Input prompts like ChatGPT](image.png)
+### 1. [User Input Prompts](app.py)
 
-### 2. Prompt templates
+> Refer to [app.py](app.py) for the implementation of user input prompts.
 
-dynamic prompting
+This codebase implements the basic feature of LLM with the help of LangChain. A user input prompt is a piece of text that is used to guide an LLM to generate text. The prompt can be as simple as a single sentence or as complex as a paragraph.
+
+Run the user input prompt app:
+
+```bash
+streamlit run app.py
+```
+
+![Input prompts like ChatGPT](prompt.png)
+
+### 2. [Prompt Templates](app_pro_tem.py)
+
+> Refer to [app_pro_tem.py](app_pro_tem.py) for the implementation of Prompt Templates
+
+This codebase implements the basic feature of LLM with the help of LangChain. Prompt Template is a piece of text that can be used to generate different prompts by filling in the placeholders with different values.
 
 For example:
 
@@ -63,34 +77,52 @@ For example:
 Write a conversational play on {topic}
 ```
 
-The `Write a converstational play on` is part of the template, and `{topic}` is variable with user input from the user interface.
+The user can input the just the topic in the text box on web app.
 
-> You can change the prompt template to your own custom prompt on line number 19 of `app_pro_tem.py`
+![Book suggestion template](prompt_template_ex.png)
 
-To run [app_pro_tem.py](app_pro_tem.py)
-    ```bash
-    streamlit run app_pro_tem.py
-    ```
+To customize the prompt template, edit line number 19 of `app_pro_tem.py`.
 
-### 3. Simple Sequential Chains
+Run the prompt template app:
 
-Refer [app_sim_seq_chain.py](app_sim_seq_chain.py)
+```bash
+streamlit run app_pro_tem.py
+```
 
-Simple Sequential prompting, that is, you can chain up multiple prompts that works together to give you multuiple output.
+### 3. [Simple Sequential Chains](app_sim_seq_chain.py)
 
-prompt 1: `'Write a unique title for conversational play on {topic}'`
+> Refer to [app_sim_seq_chain.py](app_sim_seq_chain.py) for simple sequential prompting.
 
-prompt 2: `'Write a conversational play script with atleast 10 dialogues on TITLE: {title}'`
+A simple sequential chain is a sequence of prompts that are executed one after the other. Each prompt in the chain is used to generate text, and the output of one prompt is used as the input for the next prompt
 
-These prompts run sequentionally to provide multiple outputs.
+Run the simple sequential chain app:
+
+```bash
+streamlit run app_sim_seq_chain.py
+```
 
 ![Sequentially running chains, output of chain 1 passed as input for chain 2](sim_seq_chns.png)
 
 > [!NOTE]
-> **Simple Sequential chain** only dispalys the output of the last chain on the web app, whereas to get the output of all our desired chains on our web app we can use **Sequential chain**
+> **Simple Sequential chain** only dispalys the output of the last chain on the web app, whereas to get the output of all our desired chains on our web app we use **Sequential chain**
 
-### 4. Sequential Chains
 
-Here you can see the title as well as the script
+### 4. [Sequential Chains](app_sim_seq_chain.py)
+
+> Refer to [app_sim_seq_chain.py](app_sim_seq_chain.py) for implementation of sequential prompting.
+
+Sequential chains allow you to take the output of one prompt and use it as the input for another prompt. This can be used to generate text that is more complex than what can be generated by a single prompt.
+
+```bash
+streamlit run app_seq_chain.py
+```
+
+Display both title and script in sequential chains.
+
+Example:
 
 ![Example of sequential chains, displaying output of both the chains](seq_chain_op.png)
+
+---
+
+For a detailed explanation of the code and get the basics of LangChain, read [blog](hashnode)

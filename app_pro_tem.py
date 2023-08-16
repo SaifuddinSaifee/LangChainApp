@@ -10,13 +10,13 @@ from langchain.chains import LLMChain
 os.environ["OPENAI_API_KEY"] = apikey
 
 # App framkework
-st.title('GPT Creator with Langchain')
-prompt = st.text_input('Ask away!✨')
+st.title('Book suggestion Assistant')
+prompt = st.text_input('Input your preferred genre!📖✨')
 
 # Prompt template
 title_template = PromptTemplate(
     input_variables= ['topic'],
-    template='Write a conversational play script with atleast 10 dialogues on {topic}'
+    template='Suggest me three bestselling books on genre: {topic}'
 )
 
 # LLMs
