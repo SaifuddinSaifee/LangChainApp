@@ -36,4 +36,34 @@ Download the repo:
     ```bash
     streamlit run app.py
     ```
-    
+
+## Types of use case
+
+1. With user input prompts
+
+use basic app.py
+    ```bash
+    streamlit run app.py
+    ```
+
+
+![Input prompts like ChatGPT](image.png)
+
+2. Prompt templates
+
+dynamic prompting
+
+For example:
+
+```
+Write a conversational play on {topic}
+```
+
+The `Write a converstation play on` is part of the template, and `{topic}` is variable with user input from the user interface.
+
+> You can change the prompt template to your own custom prompt on line number 19 of `app_pro_tem.py`
+
+    ```bash
+    streamlit run app_pro_tem.py
+    ```
+
