@@ -1,4 +1,3 @@
-
 # Building your first application with GPT-3 and LangChain
 
 ## Overview
